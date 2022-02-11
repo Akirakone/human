@@ -13,6 +13,7 @@ namespace Humans
         public int Health
         {
             get { return health; }
+            
         }
 
         public Human(string name, int str =3, int itl = 3, int dex = 3, int h = 100)
@@ -24,10 +25,13 @@ namespace Humans
             health = h;
         }
 
-
+        public void dealdamage(int amount)
+        {
+           health -= amount;
+        }
 
         // Build Attack method
-        public int Attack(Human target)
+        public virtual int Attack(Human target)
         {
             int dmg= Strength *3;
             target.health -= dmg;

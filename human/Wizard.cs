@@ -2,31 +2,27 @@ using System;
 
 namespace Humans
 {
-    class Wizard
+    class Wizard :Human
     {
-        // Fields for Wizard
-        public string Name;
-        public int Strength;
-        public int Intelligence;
-        public int Dexterity;
-        private int health;
-        public int Health
-        {
-            get { return health; }
-        }
+     
 
-        public Wizard(string name, int str =3, int itl = 25, int dex = 3, int h = 50)
+        public Wizard(string name):base (name, 3,25,3,50)
         {
-            Name = name;
-            Strength = str;
-            Intelligence = itl;
-            Dexterity = dex;
-            health = h;
         }
+        public void Heal(Human target)
+        {
+            int healAmt = -10 * Intelligence;    
+            target.dealdamage (healAmt);
+        }
+        public override int Attack(Human target)
+        {
+            int dmg= Intelligence *5;
+            target.dealdamage(dmg);
+            this.dealdamage(dmg * -1);
+            Console.WriteLine($"{Name} attacked {target.Name} for {dmg} damage, and now has {Health} HP!");
+            return target.Health;
 
-         public override int Attack(Human target) 
-    {
-                    
-    }
+        }
+ 
     }
 }

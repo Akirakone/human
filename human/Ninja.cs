@@ -2,33 +2,30 @@ using System;
 
 namespace Humans
 {
-    class Ninja
+    class Ninja:Human
     {
-        // Fields for Human
-        public string Name;
-        public int Strength;
-        public int Intelligence;
-        public int Dexterity;
-        private int health;
-        public int Health
-        {
-            get { return health; }
-        }
 
-        public Ninja(string name, int str =3, int itl = 3, int dex = 175, int h = 100)
+       
+
+        public Ninja(string name):base(name,3,3,175,100)
         {
-            Name = name;
-            Strength = str;
-            Intelligence = itl;
-            Dexterity = dex;
-            health = h;
+         
         }
+      
 
         public int Steal(Human target)
         {
-            target.health -= (-5);
-            health += (5);
+            target.dealdamage(5);
+            this.dealdamage(-5);
             return Health;
+        }
+        public override int Attack(Human target)
+        {
+            int dmg= Dexterity *5;
+            target.Dexterity -= dmg;
+            Console.WriteLine($"{Name} attacked {target.Name} for {dmg} Dexterity!");
+            return target.Health;
+
         }
     }
 }
