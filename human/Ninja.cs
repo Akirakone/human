@@ -2,7 +2,7 @@ using System;
 
 namespace Humans
 {
-    class Human
+    class Ninja
     {
         // Fields for Human
         public string Name;
@@ -15,7 +15,7 @@ namespace Humans
             get { return health; }
         }
 
-        public Human(string name, int str =3, int itl = 3, int dex = 3, int h = 100)
+        public Ninja(string name, int str =3, int itl = 3, int dex = 175, int h = 100)
         {
             Name = name;
             Strength = str;
@@ -24,16 +24,11 @@ namespace Humans
             health = h;
         }
 
-
-
-        // Build Attack method
-        public int Attack(Human target)
+        public int Steal(Human target)
         {
-            int dmg= Strength *3;
-            target.health -= dmg;
-            Console.WriteLine($"{Name} attacked {target.Name} for {dmg} damage!");
-            return target.Health;
-
+            target.health -= (-5);
+            health += (5);
+            return Health;
         }
     }
 }

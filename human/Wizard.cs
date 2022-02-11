@@ -2,9 +2,9 @@ using System;
 
 namespace Humans
 {
-    class Human
+    class Wizard
     {
-        // Fields for Human
+        // Fields for Wizard
         public string Name;
         public int Strength;
         public int Intelligence;
@@ -15,7 +15,7 @@ namespace Humans
             get { return health; }
         }
 
-        public Human(string name, int str =3, int itl = 3, int dex = 3, int h = 100)
+        public Wizard(string name, int str =3, int itl = 25, int dex = 3, int h = 50)
         {
             Name = name;
             Strength = str;
@@ -24,16 +24,9 @@ namespace Humans
             health = h;
         }
 
-
-
-        // Build Attack method
-        public int Attack(Human target)
-        {
-            int dmg= Strength *3;
-            target.health -= dmg;
-            Console.WriteLine($"{Name} attacked {target.Name} for {dmg} damage!");
-            return target.Health;
-
-        }
+         public override int Attack(Human target) 
+    {
+                    
+    }
     }
 }

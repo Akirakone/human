@@ -2,9 +2,9 @@ using System;
 
 namespace Humans
 {
-    class Human
+    class Samurai
     {
-        // Fields for Human
+        // Fields for Samurai
         public string Name;
         public int Strength;
         public int Intelligence;
@@ -15,7 +15,7 @@ namespace Humans
             get { return health; }
         }
 
-        public Human(string name, int str =3, int itl = 3, int dex = 3, int h = 100)
+        public Samurai(string name, int str =3, int itl = 3, int dex = 3, int h = 200)
         {
             Name = name;
             Strength = str;
@@ -23,17 +23,10 @@ namespace Humans
             Dexterity = dex;
             health = h;
         }
-
-
-
-        // Build Attack method
-        public int Attack(Human target)
+        public int Meditate(Human target)
         {
-            int dmg= Strength *3;
-            target.health -= dmg;
-            Console.WriteLine($"{Name} attacked {target.Name} for {dmg} damage!");
-            return target.Health;
-
+            health = 200;
+            return Health;
         }
     }
 }
